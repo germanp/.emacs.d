@@ -6,12 +6,16 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("elpy" . "https://jorgenschaefer.github.io/packages/") t)
+
 (package-initialize)
 
 (defvar required-packages
   '(
     magit
     yasnippet
+    elpy
   ) "a list of packages to ensure are installed at launch.")
 
 ; method to check if all packages are installed

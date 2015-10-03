@@ -10,3 +10,5 @@
 (yas-load-directory "~/.emacs.d/snippets")
 (add-hook 'term-mode-hook (lambda()
     (setq yas-dont-activate t)))
+
+(elpy-enable)

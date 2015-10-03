@@ -16,6 +16,8 @@
 (global-set-key (kbd "C-c C-l") 'windmove-up)
 (global-set-key (kbd "C-c C-;") 'windmove-right)
 
+;; CUA mode
+(cua-mode t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
