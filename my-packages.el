@@ -15,9 +15,10 @@
   '(
     magit
     yasnippet
-    elpy
     better-defaults
     company-quickhelp
+    php-mode
+    lua-mode
     ) "a list of packages to ensure are installed at launch.")
 
 ; method to check if all packages are installed

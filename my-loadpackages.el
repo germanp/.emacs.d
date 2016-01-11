@@ -15,8 +15,19 @@
 (add-hook 'term-mode-hook (lambda()
     (setq yas-dont-activate t)))
 
-;; Elpy
-(elpy-enable)
-
 ;; Inline help
 (company-quickhelp-mode 1)
+
+
+;; Emacs for Python
+
+(add-to-list 'load-path "~/.emacs.d/emacs-for-python/") ;; tell where to load the various files
+(require 'epy-setup)      ;; It will setup other loads, it is required!
+(require 'epy-python)     ;; If you want the python facilities [optional]
+(require 'epy-completion) ;; If you want the autocompletion settings [optional]
+(require 'epy-editing)    ;; For configurations related to editing [optional]
+(require 'epy-bindings)   ;; For my suggested keybindings [optional]
+;;(require 'epy-nose)       ;; For nose integration
+
+(epy-setup-checker "pyflakes %f")
+(epy-setup-ipython)
