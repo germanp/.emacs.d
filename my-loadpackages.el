@@ -15,19 +15,17 @@
 (add-hook 'term-mode-hook (lambda()
     (setq yas-dont-activate t)))
 
-;; Inline help
-(company-quickhelp-mode 1)
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; Anaconda
+(eval-after-load "company"
+ '(progn
+    (add-to-list 'company-backends 'company-anaconda)))
 
-;; Emacs for Python
+(add-hook 'python-mode-hook 'anaconda-mode)
 
-(add-to-list 'load-path "~/.emacs.d/emacs-for-python/") ;; tell where to load the various files
-(require 'epy-setup)      ;; It will setup other loads, it is required!
-(require 'epy-python)     ;; If you want the python facilities [optional]
-(require 'epy-completion) ;; If you want the autocompletion settings [optional]
-(require 'epy-editing)    ;; For configurations related to editing [optional]
-(require 'epy-bindings)   ;; For my suggested keybindings [optional]
-;;(require 'epy-nose)       ;; For nose integration
+(add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
-(epy-setup-checker "pyflakes %f")
-(epy-setup-ipython)
+;; Company Mode
+(add-hook 'after-init-hook 'global-company-mode)
