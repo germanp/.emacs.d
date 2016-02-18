@@ -29,3 +29,6 @@
 
 ;; Company Mode
 (add-hook 'after-init-hook 'global-company-mode)
+
+;; Delete trailing whitespace for everything
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
