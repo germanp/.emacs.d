@@ -38,6 +38,8 @@
   :config
   (projectile-global-mode))
 
-(use-package editorconfig)
+(use-package editorconfig
+  :config
+  (editorconfig-mode 1))
 
 (use-package markdown-mode)

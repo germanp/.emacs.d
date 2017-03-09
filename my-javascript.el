@@ -1,5 +1,6 @@
-;; js2-mode
-;; https://github.com/mooz/js2-mode
+;;; js2-mode:
+;;; https://github.com/mooz/js2-mode
+
 (use-package js2-mode
   :bind (:map js2-mode-map
               (("C-x C-e" . js-send-last-sexp)
@@ -12,10 +13,6 @@
   :config
   (custom-set-variables '(js2-strict-inconsistent-return-warning nil))
   (custom-set-variables '(js2-strict-missing-semi-warning nil))
-
-  (setq js-indent-level 2)
-  (setq js2-indent-level 2)
-  (setq js2-basic-offset 2)
 
   ;; tern :- IDE like features for javascript and completion
   ;; http://ternjs.net/doc/manual.html#emacs

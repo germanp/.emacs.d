@@ -12,11 +12,10 @@
    ("\\.erb\\'" . web-mode)
    ("\\.mustache\\'" . web-mode)
    ("\\.djhtml\\'" . web-mode)
+   ("\\.vue$" . web-mode)
    ("\\.jsx$" . web-mode))
+
   :config
-  (setq web-mode-markup-indent-offset 2
-        web-mode-css-indent-offset 2
-        web-mode-code-indent-offset 2)
 
   (add-hook 'web-mode-hook 'jsx-flycheck)
 
@@ -66,8 +65,6 @@
 	    (if tern-mode (tern-mode -1))))))
   (add-hook 'web-mode-hook 'company-mode)
 
-  ;; to get completion data for angularJS
-  (use-package ac-html-angular :defer t)
   ;; to get completion for twitter bootstrap
   (use-package ac-html-bootstrap :defer t)
 
