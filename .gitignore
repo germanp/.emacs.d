@@ -32,3 +32,4 @@ tramp
 # cask packages
 .cask/
 
+.custom.el
