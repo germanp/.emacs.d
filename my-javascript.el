@@ -26,6 +26,8 @@
     (add-hook 'js2-mode-hook 'company-mode))
 
   (add-hook 'js2-mode-hook 'tern-mode)
+  ;; Add specific configuration to .tern-project if you want better
+  ;; completition.
 
   ;; company backend for tern
   ;; http://ternjs.net/doc/manual.html#emacs
@@ -45,4 +47,4 @@
     (js2r-add-keybindings-with-prefix "C-c j r"))
   (add-hook 'js2-mode-hook 'js2-refactor-mode))
 
-(provide 'lang-javascript)
+(provide 'my-javascript)

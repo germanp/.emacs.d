@@ -16,23 +16,15 @@
    ("\\.jsx$" . web-mode))
 
   :config
+  (flycheck-add-mode 'javascript-eslint 'web-mode)
+  ;; :: Add this to .dir-locals.el to use node_modules/ installed tools (useful for eslint)
+  ;; ((nil . ((eval . (progn
+  ;;                    (add-to-list 'exec-path (concat (locate-dominating-file default-directory ".dir-locals.el") "node_modules/.bin/")))))))
 
-  (add-hook 'web-mode-hook 'jsx-flycheck)
+
 
   ;; highlight enclosing tags of the element under cursor
   (setq web-mode-enable-current-element-highlight t)
-
-  (defadvice web-mode-highlight-part (around tweak-jsx activate)
-    (if (equal web-mode-content-type "jsx")
-        (let ((web-mode-enable-part-face nil))
-          ad-do-it)
-      ad-do-it))
-
-  (defun jsx-flycheck ()
-    (when (equal web-mode-content-type "jsx")
-      ;; enable flycheck
-      (flycheck-select-checker 'jsxhint-checker)
-      (flycheck-mode)))
 
   ;; editing enhancements for web-mode
   ;; https://github.com/jtkDvlp/web-mode-edit-element
@@ -55,7 +47,7 @@
   ;; Enable JavaScript completion between <script>...</script> etc.
   (defadvice company-tern (before web-mode-set-up-ac-sources activate)
     "Set `tern-mode' based on current language before running company-tern."
-    (message "advice")
+    ;;(message "advice")
     (if (equal major-mode 'web-mode)
 	(let ((web-mode-cur-language
 	       (web-mode-language-at-pos)))
@@ -63,6 +55,7 @@
 		  (string= web-mode-cur-language "jsx"))
 	      (unless tern-mode (tern-mode))
 	    (if tern-mode (tern-mode -1))))))
+
   (add-hook 'web-mode-hook 'company-mode)
 
   ;; to get completion for twitter bootstrap
@@ -89,4 +82,4 @@
   :diminish (impatient-mode . " i")
   :commands (impatient-mode))
 
-(provide 'lang-web)
+(provide 'my-web)
