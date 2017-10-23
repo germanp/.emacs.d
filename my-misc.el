@@ -43,3 +43,10 @@
   (editorconfig-mode 1))
 
 (use-package markdown-mode)
+
+(use-package exec-path-from-shell
+  :config
+  (setq exec-path-from-shell-check-startup-files nil)
+  (exec-path-from-shell-initialize))
+
+(use-package yaml-mode)

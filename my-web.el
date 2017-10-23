@@ -10,6 +10,7 @@
    ("\\.[agj]sp\\'" . web-mode)
    ("\\.as[cp]x\\'" . web-mode)
    ("\\.erb\\'" . web-mode)
+   ("\\.hbs\\'" . web-mode)
    ("\\.mustache\\'" . web-mode)
    ("\\.djhtml\\'" . web-mode)
    ("\\.vue$" . web-mode)
